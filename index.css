@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #457b9d;
+}
+
+.wrapper {
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+
+.tabs-block {
+    max-width: 700px;
+    width: 100%;
+    background-color: white;
+    margin: 40px auto;
+    border-radius: 10px;
+    padding: 15px;
+    z-index: 1;
+    
+}
+
+.tabs-block__title {
+    padding: 15px 0;
+    color: #023047;
+}
+
+.tabs-block__tab-label {
+    padding: 5px;   
+    margin-left: 3px; 
+    color: #457b9d;
+    position: relative;
+    z-index: 3;
+}
+
+.tabs-block__tab-label i {
+    padding-right: 7px;
+}
+
+.tabs-block__radio-inp-choise {
+    display: none;
+}
+
+.tabs-block__slider {
+    position: relative;
+}
+
+.slider-background {
+    background-color: #457b9d;
+    border-radius: 5px;
+    position: absolute;
+    height: 2rem;
+    top: -5px;
+    z-index: 2;
+    display: inline-block;
+
+    transition: left 0.3s ease;
+}
+
+#HomeInp:checked ~ .tabs-block__slider .Home-label,
+#NotesInp:checked ~ .tabs-block__slider .Notes-label,
+#SavedInp:checked ~ .tabs-block__slider .Saved-label,
+#InboxInp:checked ~ .tabs-block__slider .Inbox-label,
+#InfoInp:checked ~ .tabs-block__slider .Info-label {
+    color: white;
+}
+
+#HomeInp:checked ~ .tabs-block__slider .slider-background {
+    left: 0;
+    width: 90px;
+}
+
+#NotesInp:checked ~ .tabs-block__slider .slider-background {
+    left: 90px;
+    width: 82px;
+}
+
+#SavedInp:checked ~ .tabs-block__slider .slider-background {
+    left: 175px;
+    width: 85px;
+}
+
+#InboxInp:checked ~ .tabs-block__slider .slider-background {
+    left: 262px;
+    width: 82px;
+}
+
+#InfoInp:checked ~ .tabs-block__slider .slider-background {
+    left: 347px;
+    width: 65px;
+}
+
+/*Tabs content*/
+.tabs-block__tabs-content > * {
+    /* display: none; */
+    margin-top: 20px;
+    border: 2px solid rgba(200, 200, 200, 0.5);
+    padding: 15px;
+    border-radius: 10px;
+    color: #023047;
+
+    max-height: 350px;
+    overflow: auto;
+
+    display: none;
+}
+
+#HomeInp:checked ~ .tabs-block__tabs-content .tabs-content__home-content {
+    display: block;
+}
+
+#NotesInp:checked ~ .tabs-block__tabs-content .tabs-content__notes-content {
+    display: block;
+}
+
+#SavedInp:checked ~ .tabs-block__tabs-content .tabs-content__saved-content {
+    display: block;
+}
+
+#InboxInp:checked ~ .tabs-block__tabs-content .tabs-content__inbox-content {
+    display: block;
+}
+
+#InfoInp:checked ~ .tabs-block__tabs-content .tabs-content__info-content {
+    display: block;
+}
+
+
+
+
